@@ -1,10 +1,14 @@
 {
   "name": "fis3-parser-html-theme",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "引入less支持theme配置",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:jguang/fis3-parser-html-theme.git"
   },
   "keywords": [
     "fis3",
@@ -13,5 +17,9 @@
     "theme"
   ],
   "author": "jguang001@gmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jguang/fis3-parser-html-theme/issues"
+  },
+  "homepage": "https://github.com/jguang/fis3-parser-html-theme#readme"
 }
