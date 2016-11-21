@@ -39,7 +39,8 @@ module.exports = function (content, file, opt) {
 
         file.derived.push(newThemeFile);
 
-        file.addRequire(newThemeFile.getId());
+        // 文件依赖可不加 否侧load
+        //file.addRequire(newThemeFile.getId());
 
         //console.log( newThemeFile );
         //console.log( fis.compile.lang.uri.wrap(newThemeFile.url));
