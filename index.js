@@ -24,14 +24,18 @@ module.exports = function (content, file, opt) {
         var newThemeContent = themeFile.getContent();
         var matchTheme = newThemeContent.match(/\@theme\s*\:\s*(.*?)(\;)/i);
 
-        newThemeContent = newThemeContent.replace(matchTheme[1], theme);
-
+        if(matchTheme && matchTheme[1]){
+            newThemeContent = newThemeContent.replace(matchTheme[1], theme);
+        }
 
         newThemeFile.cache = file.cache;
 
         newThemeFile.setContent(newThemeContent);
 
         fis.compile.process(newThemeFile);
+        
+        // 添加对本theme的依赖 否侧watch下不更新此theme
+        newThemeFile.cache.addDeps(themeFile.realpath);
 
         newThemeFile.links.forEach(function(derived) {
             file.addLink(derived);
